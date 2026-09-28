@@ -147,16 +147,25 @@
 <div class="auto-div">
   <div id ="divmenu" style="height: 8%; width: 100%; display: flex; justify-content: space-around; background-color: rgb(8, 137, 223);"> 
     <div style="overflow: hidden; height: 100%; width: 20%; background-color:  rgb(8, 137, 223);">
-      <img src='https://cdn.nhanlucnganhluat.vn/uploads/images/E4B88850/logo/2021-03/Logo.png' style=" object-fit: cover; width:auto; height: 100%;">
+      <img  src='https://cdn.nhanlucnganhluat.vn/uploads/images/E4B88850/logo/2021-03/Logo.png' style=" object-fit: cover; width:auto; height: 100%;">
     </div>
-    <div style="height: 100%; width: 60%;font-size: 2vw ;text-align: center;" class="divtag"  > 
+    <div style="height: 100%; width: 50%;font-size: 2vw ;text-align: center;" class="divtag"  > 
         TAFUCO FACTORY SCADA
     </div>   
-    <div  style="height: 100%; width: 10%; background-color: rgb(8, 137, 223);display: flex;justify-content:  flex-start; flex-direction: column; ">
+    <div  style="height: 100%; width: 20%; background-color: rgb(8, 137, 223);display: flex;justify-content:  flex-start; flex-direction: row; ">
+    
+    <div style="height: 100%; width: 50%; background-color: rgb(8, 137, 223);display: flex;justify-content:  flex-start; flex-direction: column; ">
     <div id="tab1_bt" class="tab_class">Máy sản xuất</div>
     <div id="tab2_bt" class="tab_class">Hệ thống phụ trợ</div>
     <div id="tab3_bt" class="tab_class">Sản lượng</div>
+    </div> 
+    
+    <div style="height: 100%; width: 50%; background-color: rgb(8, 137, 223);display: flex;justify-content:  flex-start; flex-direction: column; ">
     <div id="tab4_bt" class="tab_class">Điện năng tiêu thụ</div>
+    <div id="tab5_bt" class="tab_class">Tổng điện năng tiêu thụ</div>
+    <div id="rst_alarm" class="tab_class">reset canh báo</div>
+    </div> 
+  
     </div>
     </div>
  
@@ -205,8 +214,19 @@
        <div id="icon_tui9" class="tui-div" ></div>
        <div id="icon_tui10" class="tui-div" ></div> 
       </div>
-  </div>  
-  <svg id="tab2" width="auto" height="auto" version="1.1" viewBox="0 0 508 285.75" xmlns="http://www.w3.org/2000/svg"  >
+  </div> 
+  <div id="tab2" style="position: relative;">
+      <dialog id="dialog_control_on_off" style="width:20%;height:10%;background-color:#c5dcdd;border:1px dotted black; position: absolute;z-index: 10;"> 
+        <div style=" background-color: #d3d700; display: flex; justify-content: space-between;align-items: center;">
+          <div id="name_control"> </div>
+          <button style="float: right;" id="cancel_control_on_off">Thoát</button>
+        </div>
+        <div style="display: flex;align-items: center;">
+          <input type="text"  style="width :30%;" id="string_cm">
+          <button id="control">đặt</button>
+        </div>
+      </dialog> 
+      <svg  width="auto" height="auto" version="1.1" viewBox="0 0 508 285.75" xmlns="http://www.w3.org/2000/svg"  >
  
   <g fill="none" stroke-width=".52917">
   <path d="m51.997 85.79h3.4868m-3.4749-21.205h3.4868m-3.4745-23.005h3.4868m-5.7005 12.784h1.9596m0.35301-34.406h3.4868m-5.5371 34.139a1.2568 1.2568 0 0 1-0.6319 1.0904 1.2568 1.2568 0 0 1-1.2603-0.0061 1.2568 1.2568 0 0 1-0.62131-1.0965m-21.164 0.26653h21.434m-26.01-34.97h4.2457m-4.2457-9.7658h4.1632m0.23589-4.59v117.02m-4.3991-5.008h4.4933m-4.4933-9.7658h4.3558m-4.3558-9.7658h4.3283m-4.3283-19.532h4.3833m-4.3833-9.7658h4.2732m-4.2732-9.7658h4.3558m-4.3558-9.7658h4.3008m-4.3008-9.7658h4.3558m-4.3558-9.7658h4.3283m-4.3283 58.595h4.4108m25.813-82.717v116.41" stroke="#00e100"/>
@@ -314,6 +334,7 @@
   <text id="t_phe1" x="126.90226" y="38.223103" font-family="sans-serif" font-size="3.1167px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="126.90226" y="38.223103" font-size="2.8222px" stroke-width=".14367"> (degree C)</tspan></text>
   <text  id="t_phe2"x="123.89741" y="66.991089" font-family="sans-serif" font-size="3.1167px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="123.89741" y="66.991089" font-size="2.8222px" stroke-width=".14367"> (degree C)</tspan></text>
   <text id="t_in_room" x="58.363968" y="49.617157"  style="line-height:0.25" xml:space="preserve"><tspan x="58.363968" y="49.617157" font-size="2.8222px" stroke-width=".16458"> (degree C)</tspan></text>
+  <text id="label_fcuin" transform="translate(-4, -11)" x="58.363968" y="49.617157"  style="line-height:0.25" xml:space="preserve"><tspan x="58.363968" y="49.617157" font-size="2.8222px" stroke-width=".16458"> Máy lạnh phòng in </tspan></text>
 
   </g>
 ////khí nén 
@@ -360,10 +381,10 @@
  <path id="icon_exin" d="m482.61 57.825a5.4582 5.2001 0 0 1-5.4582 5.2001 5.4582 5.2001 0 0 1-5.4582-5.2001 5.4582 5.2001 0 0 1 5.4582-5.2001 5.4582 5.2001 0 0 1 5.4582 5.2001zm-8.1119-6.7911a7.6414 7.2802 0 0 1 8.8588 2.0503 7.6414 7.2802 0 0 1 0.49366 8.6728 7.6414 7.2802 0 0 1-8.5741 2.951 7.6414 7.2802 0 0 1-5.4381-6.971m13 5.1604 2.1189 7.0224m-15.042-1e-6h15.042m-12.924-7.0224-2.1189 7.0224m4.579-16.568c2.2e-4 -10.724 0-32.172 0-32.172m-4.7083 36.524c2.2e-4 -12.174 0-36.523 0-36.523m2.3414-3.727c1.329 1.0075 2.6583 2.0148 3.9878 3.0219m-3.9878-3.0219c-1.329 1.0075-2.6583 2.0148-3.9878 3.0219" />
 </g>
   <g fill="#000000" font-family="sans-serif" font-size="3.1167px" stroke-width=".26458">
-  <text transform="rotate(-90)" x="-45.897861" y="371.23123" stroke-width=".10583" xml:space="preserve"><tspan x="-45.897861" y="371.23123" stroke-width=".10583">Hút dung môi in 1</tspan><tspan x="-45.897861" y="375.19998"/></text>
-    <text transform="rotate(-90)" x="-45.897861" y="404.4617" xml:space="preserve"><tspan x="-45.897861" y="404.4617" fill="#00000a" stroke-width=".10583">Hút dung môi in2</tspan></text>
-   <text transform="rotate(-90)" x="-45.897861" y="435.58936" xml:space="preserve"><tspan x="-45.897861" y="435.58936" stroke-width=".10583">Hút dung môi in 3</tspan><tspan x="-45.897861" y="439.55811"/></text>
-   <text transform="rotate(-90)" x="-58.047134" y="464.96335" xml:space="preserve"><tspan x="-58.047134" y="464.96335" stroke-width=".10583">Hút dung môi sàn phòng in</tspan><tspan x="-58.047134" y="468.9321"/></text>
+  <text id="label_exin1" transform="rotate(-90)" x="-45.897861" y="371.23123" stroke-width=".10583" xml:space="preserve"><tspan x="-45.897861" y="371.23123" stroke-width=".10583">Hút dung môi in 1</tspan><tspan x="-45.897861" y="375.19998"/></text>
+  <text id="label_exin2" transform="rotate(-90)" x="-45.897861" y="404.4617" xml:space="preserve"><tspan x="-45.897861" y="404.4617" fill="#00000a" stroke-width=".10583">Hút dung môi in2</tspan></text>
+   <text id="label_exin3" transform="rotate(-90)" x="-45.897861" y="435.58936" xml:space="preserve"><tspan x="-45.897861" y="435.58936" stroke-width=".10583">Hút dung môi in 3</tspan><tspan x="-45.897861" y="439.55811"/></text>
+   <text id="label_exin" transform="rotate(-90)" x="-58.047134" y="464.96335" xml:space="preserve"><tspan x="-58.047134" y="464.96335" stroke-width=".10583">Hút dung môi sàn phòng in</tspan><tspan x="-58.047134" y="468.9321"/></text>
    <text id="r_exin1" x="373.29526" y="75.476555" xml:space="preserve"><tspan x="373.29526" y="75.476555" >dừng1</tspan><tspan x="373.29526" y="79.445305"/></text>
    <text id="s_exin1" x="373.29526" y="81.056694" xml:space="preserve"><tspan x="373.29526" y="81.056694" >chạy1</tspan><tspan x="373.29526" y="85.025444"/></text>
    <text id="r_exin2" x="404.20941" y="75.476555" xml:space="preserve"><tspan x="404.20941" y="75.476555" >dừng2</tspan><tspan x="404.20941" y="79.445305"/></text>
@@ -376,19 +397,39 @@
 <g fill="none" stroke="#1c1818" stroke-width=".26458">
  <path id="rotate_fein" fill="#45474b" d="m378.49 100.66-0.37146 2.8619c-0.13398-0.40527-0.37733-1.062-0.6053-1.2624-0.24529-0.21561-0.65393-0.16869-0.88032-0.40571-0.24498-0.25649-0.045-1.005-0.35681-0.97083-0.58567 0.0643-1.3708 1.1701-1.3708 1.1701l2.1919 1.7663c-0.40368-0.0817-1.071-0.19037-1.3515-0.0847-0.30175 0.11365-0.46706 0.506-0.77717 0.59186-0.33556 0.0929-0.85754-0.46194-0.98502-0.16336-0.23945 0.56086 0.28672 1.8226 0.28672 1.8226l2.5631-1.0954c-0.26967 0.32361-0.69352 0.87146-0.74599 1.1774-0.0566 0.32926 0.18687 0.67469 0.10317 0.99758-0.0906 0.3494-0.81251 0.54327-0.6282 0.80764 0.3462 0.4966 1.6575 0.65254 1.6575 0.65254l0.37146-2.8618c0.13398 0.40528 0.37734 1.0618 0.60531 1.2622 0.24529 0.21561 0.65392 0.16887 0.88031 0.40589 0.24498 0.25649 0.045 1.005 0.35681 0.97082 0.58567-0.0643 1.3708-1.1701 1.3708-1.1701l-2.1919-1.7663c0.40367 0.0817 1.071 0.19037 1.3515 0.0847 0.30176-0.11364 0.46707-0.506 0.77717-0.59186 0.33557-0.0929 0.85754 0.46176 0.98502 0.16318 0.23945-0.56086-0.28672-1.8226-0.28672-1.8226l-2.5631 1.0956c0.26968-0.32361 0.69352-0.87147 0.746-1.1774 0.0566-0.32925-0.18687-0.67487-0.10305-0.99775 0.0906-0.34941 0.8125-0.5431 0.62819-0.80747-0.3462-0.4966-1.6575-0.65254-1.6575-0.65254zm-0.49837 3.5938c0.0417 0.11108 0.11843 0.21937 0.21319 0.29297-0.0716 0.0931-0.123 0.21662-0.13673 0.33911-0.11302-0.018-0.24138-3e-3 -0.34991 0.0458-0.0417-0.11102-0.11843-0.21923-0.21321-0.29279 0.0716-0.0931 0.12301-0.21663 0.13673-0.33911 0.11315 0.018 0.24139 3e-3 0.34993-0.046z"/>
  <path id="icon_fein" d="m381.33 108.72v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-0.60451 7.6053h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.2659-0.77579h8.3536v8.3536h-8.3536v-8.3536zm-0.39157-0.39157h9.1367v9.1367h-9.1367v-9.1367z" fill="none" stroke="#0e107c" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="18.8" stroke-width=".13149"/>
- <path  id="rotate_ext1" fill="#45474b" d="m403.82 100.66-0.37146 2.8618c-0.13398-0.40528-0.37733-1.062-0.6053-1.2624-0.24529-0.2156-0.65393-0.16869-0.88032-0.40571-0.24498-0.25649-0.045-1.005-0.35681-0.97082-0.58567 0.0643-1.3708 1.1701-1.3708 1.1701l2.1919 1.7663c-0.40368-0.0817-1.071-0.19037-1.3515-0.0847-0.30175 0.11364-0.46706 0.506-0.77717 0.59186-0.33556 0.0929-0.85754-0.46194-0.98502-0.16336-0.23945 0.56086 0.28672 1.8226 0.28672 1.8226l2.5631-1.0954c-0.26967 0.32362-0.69352 0.87147-0.74599 1.1774-0.0566 0.32925 0.18687 0.67469 0.10317 0.99758-0.0906 0.3494-0.81251 0.54327-0.6282 0.80764 0.3462 0.4966 1.6575 0.65254 1.6575 0.65254l0.37146-2.8618c0.13398 0.40527 0.37734 1.0618 0.60531 1.2622 0.24529 0.2156 0.65392 0.16886 0.88031 0.40589 0.24498 0.25649 0.045 1.005 0.35681 0.97082 0.58567-0.0643 1.3708-1.1701 1.3708-1.1701l-2.1919-1.7663c0.40367 0.0817 1.071 0.19036 1.3515 0.0847 0.30176-0.11365 0.46707-0.506 0.77717-0.59187 0.33557-0.0929 0.85754 0.46177 0.98502 0.16319 0.23945-0.56086-0.28672-1.8226-0.28672-1.8226l-2.5631 1.0956c0.26968-0.32361 0.69352-0.87147 0.746-1.1774 0.0566-0.32925-0.18687-0.67487-0.10305-0.99775 0.0906-0.34941 0.8125-0.54309 0.62819-0.80747-0.3462-0.49659-1.6575-0.65254-1.6575-0.65254zm-0.49837 3.5937c0.0417 0.11108 0.11843 0.21937 0.21319 0.29296-0.0716 0.0931-0.123 0.21663-0.13673 0.33911-0.11302-0.018-0.24138-3e-3 -0.34991 0.0458-0.0417-0.11102-0.11843-0.21922-0.21321-0.29279 0.0716-0.0931 0.12301-0.21662 0.13673-0.3391 0.11315 0.018 0.24139 3e-3 0.34993-0.046z"/>
+ <path id="rotate_ext1" fill="#45474b" d="m403.82 100.66-0.37146 2.8618c-0.13398-0.40528-0.37733-1.062-0.6053-1.2624-0.24529-0.2156-0.65393-0.16869-0.88032-0.40571-0.24498-0.25649-0.045-1.005-0.35681-0.97082-0.58567 0.0643-1.3708 1.1701-1.3708 1.1701l2.1919 1.7663c-0.40368-0.0817-1.071-0.19037-1.3515-0.0847-0.30175 0.11364-0.46706 0.506-0.77717 0.59186-0.33556 0.0929-0.85754-0.46194-0.98502-0.16336-0.23945 0.56086 0.28672 1.8226 0.28672 1.8226l2.5631-1.0954c-0.26967 0.32362-0.69352 0.87147-0.74599 1.1774-0.0566 0.32925 0.18687 0.67469 0.10317 0.99758-0.0906 0.3494-0.81251 0.54327-0.6282 0.80764 0.3462 0.4966 1.6575 0.65254 1.6575 0.65254l0.37146-2.8618c0.13398 0.40527 0.37734 1.0618 0.60531 1.2622 0.24529 0.2156 0.65392 0.16886 0.88031 0.40589 0.24498 0.25649 0.045 1.005 0.35681 0.97082 0.58567-0.0643 1.3708-1.1701 1.3708-1.1701l-2.1919-1.7663c0.40367 0.0817 1.071 0.19036 1.3515 0.0847 0.30176-0.11365 0.46707-0.506 0.77717-0.59187 0.33557-0.0929 0.85754 0.46177 0.98502 0.16319 0.23945-0.56086-0.28672-1.8226-0.28672-1.8226l-2.5631 1.0956c0.26968-0.32361 0.69352-0.87147 0.746-1.1774 0.0566-0.32925-0.18687-0.67487-0.10305-0.99775 0.0906-0.34941 0.8125-0.54309 0.62819-0.80747-0.3462-0.49659-1.6575-0.65254-1.6575-0.65254zm-0.49837 3.5937c0.0417 0.11108 0.11843 0.21937 0.21319 0.29296-0.0716 0.0931-0.123 0.21663-0.13673 0.33911-0.11302-0.018-0.24138-3e-3 -0.34991 0.0458-0.0417-0.11102-0.11843-0.21922-0.21321-0.29279 0.0716-0.0931 0.12301-0.21662 0.13673-0.3391 0.11315 0.018 0.24139 3e-3 0.34993-0.046z"/>
  <path id="icon_ext1" d="m406.66 108.72v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-0.60451 7.6053h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.2659-0.77578h8.3536v8.3536h-8.3536v-8.3536zm-0.39157-0.39158h9.1367v9.1367h-9.1367v-9.1367z" fill="none" stroke="#0e107c" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="18.8" stroke-width=".13149"/>
  <path id="rotate_ext2" fill="#45474b" d="m378.49 119.06-0.37146 2.8619c-0.13398-0.40528-0.37733-1.062-0.6053-1.2624-0.24529-0.2156-0.65393-0.16869-0.88032-0.40571-0.24498-0.25649-0.045-1.005-0.35681-0.97083-0.58567 0.0643-1.3708 1.1701-1.3708 1.1701l2.1919 1.7663c-0.40368-0.0817-1.071-0.19037-1.3515-0.0847-0.30175 0.11364-0.46706 0.506-0.77717 0.59186-0.33556 0.0929-0.85754-0.46194-0.98502-0.16336-0.23945 0.56086 0.28672 1.8226 0.28672 1.8226l2.5631-1.0954c-0.26967 0.32362-0.69352 0.87147-0.74599 1.1774-0.0566 0.32925 0.18687 0.67469 0.10317 0.99758-0.0906 0.3494-0.81251 0.54327-0.6282 0.80764 0.3462 0.4966 1.6575 0.65254 1.6575 0.65254l0.37146-2.8618c0.13398 0.40527 0.37734 1.0618 0.60531 1.2622 0.24529 0.2156 0.65392 0.16886 0.88031 0.40589 0.24498 0.25649 0.045 1.005 0.35681 0.97082 0.58567-0.0643 1.3708-1.1701 1.3708-1.1701l-2.1919-1.7663c0.40367 0.0817 1.071 0.19036 1.3515 0.0847 0.30176-0.11365 0.46707-0.506 0.77717-0.59187 0.33557-0.0929 0.85754 0.46177 0.98502 0.16319 0.23945-0.56086-0.28672-1.8226-0.28672-1.8226l-2.5631 1.0956c0.26968-0.32361 0.69352-0.87147 0.746-1.1774 0.0566-0.32925-0.18687-0.67487-0.10305-0.99775 0.0906-0.34941 0.8125-0.5431 0.62819-0.80748-0.3462-0.49659-1.6575-0.65254-1.6575-0.65254zm-0.49837 3.5938c0.0417 0.11108 0.11843 0.21937 0.21319 0.29296-0.0716 0.0931-0.123 0.21663-0.13673 0.33911-0.11302-0.018-0.24138-3e-3 -0.34991 0.0458-0.0417-0.11102-0.11843-0.21922-0.21321-0.29279 0.0716-0.0931 0.12301-0.21662 0.13673-0.3391 0.11315 0.018 0.24139 3e-3 0.34993-0.046z" />
  <path id="icon_ext2"  d="m381.33 127.12v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-0.60451 7.6054h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.2659-0.77578h8.3536v8.3536h-8.3536v-8.3536zm-0.39157-0.39158h9.1367v9.1367h-9.1367v-9.1367z" fill="none" stroke="#0e107c" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="18.8" stroke-width=".13149"/>
  <path id="rotate_ext3" fill="#45474b" d="m403.82 119.06-0.37146 2.8618c-0.13398-0.40528-0.37733-1.062-0.6053-1.2624-0.24529-0.2156-0.65393-0.16869-0.88032-0.40571-0.24498-0.25649-0.045-1.005-0.35681-0.97082-0.58567 0.0643-1.3708 1.1701-1.3708 1.1701l2.1919 1.7663c-0.40368-0.0817-1.071-0.19037-1.3515-0.0847-0.30175 0.11364-0.46706 0.506-0.77717 0.59186-0.33556 0.0929-0.85754-0.46194-0.98502-0.16336-0.23945 0.56086 0.28672 1.8226 0.28672 1.8226l2.5631-1.0954c-0.26967 0.32362-0.69352 0.87147-0.74599 1.1774-0.0566 0.32925 0.18687 0.67469 0.10317 0.99758-0.0906 0.3494-0.81251 0.54327-0.6282 0.80764 0.3462 0.4966 1.6575 0.65254 1.6575 0.65254l0.37146-2.8618c0.13398 0.40527 0.37734 1.0618 0.60531 1.2622 0.24529 0.2156 0.65392 0.16886 0.88031 0.40589 0.24498 0.25649 0.045 1.005 0.35681 0.97082 0.58567-0.0643 1.3708-1.1701 1.3708-1.1701l-2.1919-1.7663c0.40367 0.0817 1.071 0.19036 1.3515 0.0847 0.30176-0.11365 0.46707-0.506 0.77717-0.59187 0.33557-0.0929 0.85754 0.46177 0.98502 0.16319 0.23945-0.56086-0.28672-1.8226-0.28672-1.8226l-2.5631 1.0956c0.26968-0.32361 0.69352-0.87147 0.746-1.1774 0.0566-0.32925-0.18687-0.67487-0.10305-0.99775 0.0906-0.34941 0.8125-0.54309 0.62819-0.80747-0.3462-0.49659-1.6575-0.65254-1.6575-0.65254zm-0.49837 3.5937c0.0417 0.11108 0.11843 0.21937 0.21319 0.29296-0.0716 0.0931-0.123 0.21663-0.13673 0.33911-0.11302-0.018-0.24138-3e-3 -0.34991 0.0458-0.0417-0.11102-0.11843-0.21922-0.21321-0.29279 0.0716-0.0931 0.12301-0.21662 0.13673-0.3391 0.11315 0.018 0.24139 3e-3 0.34993-0.046z" />
  <path id="icon_ext3" d="m406.66 127.12v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-0.60451 7.6053h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.2659-0.77578h8.3536v8.3536h-8.3536v-8.3536zm-0.39157-0.39158h9.1367v9.1367h-9.1367v-9.1367z" fill="none" stroke="#0e107c" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="18.8" stroke-width=".13149"/>
- 
+</g>
+<g transform="translate(60, 0)"  stroke="#1c1818" stroke-width=".26458" >
+<path id="rotate_ex1th" fill="#45474b" d="m378.49 100.66-0.37146 2.8619c-0.13398-0.40527-0.37733-1.062-0.6053-1.2624-0.24529-0.21561-0.65393-0.16869-0.88032-0.40571-0.24498-0.25649-0.045-1.005-0.35681-0.97083-0.58567 0.0643-1.3708 1.1701-1.3708 1.1701l2.1919 1.7663c-0.40368-0.0817-1.071-0.19037-1.3515-0.0847-0.30175 0.11365-0.46706 0.506-0.77717 0.59186-0.33556 0.0929-0.85754-0.46194-0.98502-0.16336-0.23945 0.56086 0.28672 1.8226 0.28672 1.8226l2.5631-1.0954c-0.26967 0.32361-0.69352 0.87146-0.74599 1.1774-0.0566 0.32926 0.18687 0.67469 0.10317 0.99758-0.0906 0.3494-0.81251 0.54327-0.6282 0.80764 0.3462 0.4966 1.6575 0.65254 1.6575 0.65254l0.37146-2.8618c0.13398 0.40528 0.37734 1.0618 0.60531 1.2622 0.24529 0.21561 0.65392 0.16887 0.88031 0.40589 0.24498 0.25649 0.045 1.005 0.35681 0.97082 0.58567-0.0643 1.3708-1.1701 1.3708-1.1701l-2.1919-1.7663c0.40367 0.0817 1.071 0.19037 1.3515 0.0847 0.30176-0.11364 0.46707-0.506 0.77717-0.59186 0.33557-0.0929 0.85754 0.46176 0.98502 0.16318 0.23945-0.56086-0.28672-1.8226-0.28672-1.8226l-2.5631 1.0956c0.26968-0.32361 0.69352-0.87147 0.746-1.1774 0.0566-0.32925-0.18687-0.67487-0.10305-0.99775 0.0906-0.34941 0.8125-0.5431 0.62819-0.80747-0.3462-0.4966-1.6575-0.65254-1.6575-0.65254zm-0.49837 3.5938c0.0417 0.11108 0.11843 0.21937 0.21319 0.29297-0.0716 0.0931-0.123 0.21662-0.13673 0.33911-0.11302-0.018-0.24138-3e-3 -0.34991 0.0458-0.0417-0.11102-0.11843-0.21923-0.21321-0.29279 0.0716-0.0931 0.12301-0.21663 0.13673-0.33911 0.11315 0.018 0.24139 3e-3 0.34993-0.046z"/>
+ <path id="icon_ex1th" d="m381.33 108.72v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-0.60451 7.6053h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.2659-0.77579h8.3536v8.3536h-8.3536v-8.3536zm-0.39157-0.39157h9.1367v9.1367h-9.1367v-9.1367z" fill="none" stroke="#0e107c" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="18.8" stroke-width=".13149"/>
+</g>
+<g transform="translate(60, 0)" fill="#000000" font-family="sans-serif" font-size="3.1167px" stroke-width=".26458" >
+ <text id="label_exth1" x="368.70569" y="98.110046" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">quạt hút phòng thổi</text>
+</g>
+<g transform="translate(90, 0)"  stroke="#1c1818" stroke-width=".26458">
+<path id="rotate_ex2th" fill="#45474b" d="m378.49 100.66-0.37146 2.8619c-0.13398-0.40527-0.37733-1.062-0.6053-1.2624-0.24529-0.21561-0.65393-0.16869-0.88032-0.40571-0.24498-0.25649-0.045-1.005-0.35681-0.97083-0.58567 0.0643-1.3708 1.1701-1.3708 1.1701l2.1919 1.7663c-0.40368-0.0817-1.071-0.19037-1.3515-0.0847-0.30175 0.11365-0.46706 0.506-0.77717 0.59186-0.33556 0.0929-0.85754-0.46194-0.98502-0.16336-0.23945 0.56086 0.28672 1.8226 0.28672 1.8226l2.5631-1.0954c-0.26967 0.32361-0.69352 0.87146-0.74599 1.1774-0.0566 0.32926 0.18687 0.67469 0.10317 0.99758-0.0906 0.3494-0.81251 0.54327-0.6282 0.80764 0.3462 0.4966 1.6575 0.65254 1.6575 0.65254l0.37146-2.8618c0.13398 0.40528 0.37734 1.0618 0.60531 1.2622 0.24529 0.21561 0.65392 0.16887 0.88031 0.40589 0.24498 0.25649 0.045 1.005 0.35681 0.97082 0.58567-0.0643 1.3708-1.1701 1.3708-1.1701l-2.1919-1.7663c0.40367 0.0817 1.071 0.19037 1.3515 0.0847 0.30176-0.11364 0.46707-0.506 0.77717-0.59186 0.33557-0.0929 0.85754 0.46176 0.98502 0.16318 0.23945-0.56086-0.28672-1.8226-0.28672-1.8226l-2.5631 1.0956c0.26968-0.32361 0.69352-0.87147 0.746-1.1774 0.0566-0.32925-0.18687-0.67487-0.10305-0.99775 0.0906-0.34941 0.8125-0.5431 0.62819-0.80747-0.3462-0.4966-1.6575-0.65254-1.6575-0.65254zm-0.49837 3.5938c0.0417 0.11108 0.11843 0.21937 0.21319 0.29297-0.0716 0.0931-0.123 0.21662-0.13673 0.33911-0.11302-0.018-0.24138-3e-3 -0.34991 0.0458-0.0417-0.11102-0.11843-0.21923-0.21321-0.29279 0.0716-0.0931 0.12301-0.21663 0.13673-0.33911 0.11315 0.018 0.24139 3e-3 0.34993-0.046z"/>
+ <path id="icon_ex2th" d="m381.33 108.72v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-0.60451 7.6053h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.2659-0.77579h8.3536v8.3536h-8.3536v-8.3536zm-0.39157-0.39157h9.1367v9.1367h-9.1367v-9.1367z" fill="none" stroke="#0e107c" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="18.8" stroke-width=".13149"/>
+</g>
+<g transform="translate(90, 0)" fill="#000000" font-family="sans-serif" font-size="3.1167px" stroke-width=".26458" >
+ <text id="label_exth2" x="368.70569" y="98.110046" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">quạt hút phòng thổi</text>
+</g>
+<g transform="translate(120, 0)"  stroke="#1c1818" stroke-width=".26458" >
+<path id="rotate_ex3th" fill="#45474b" d="m378.49 100.66-0.37146 2.8619c-0.13398-0.40527-0.37733-1.062-0.6053-1.2624-0.24529-0.21561-0.65393-0.16869-0.88032-0.40571-0.24498-0.25649-0.045-1.005-0.35681-0.97083-0.58567 0.0643-1.3708 1.1701-1.3708 1.1701l2.1919 1.7663c-0.40368-0.0817-1.071-0.19037-1.3515-0.0847-0.30175 0.11365-0.46706 0.506-0.77717 0.59186-0.33556 0.0929-0.85754-0.46194-0.98502-0.16336-0.23945 0.56086 0.28672 1.8226 0.28672 1.8226l2.5631-1.0954c-0.26967 0.32361-0.69352 0.87146-0.74599 1.1774-0.0566 0.32926 0.18687 0.67469 0.10317 0.99758-0.0906 0.3494-0.81251 0.54327-0.6282 0.80764 0.3462 0.4966 1.6575 0.65254 1.6575 0.65254l0.37146-2.8618c0.13398 0.40528 0.37734 1.0618 0.60531 1.2622 0.24529 0.21561 0.65392 0.16887 0.88031 0.40589 0.24498 0.25649 0.045 1.005 0.35681 0.97082 0.58567-0.0643 1.3708-1.1701 1.3708-1.1701l-2.1919-1.7663c0.40367 0.0817 1.071 0.19037 1.3515 0.0847 0.30176-0.11364 0.46707-0.506 0.77717-0.59186 0.33557-0.0929 0.85754 0.46176 0.98502 0.16318 0.23945-0.56086-0.28672-1.8226-0.28672-1.8226l-2.5631 1.0956c0.26968-0.32361 0.69352-0.87147 0.746-1.1774 0.0566-0.32925-0.18687-0.67487-0.10305-0.99775 0.0906-0.34941 0.8125-0.5431 0.62819-0.80747-0.3462-0.4966-1.6575-0.65254-1.6575-0.65254zm-0.49837 3.5938c0.0417 0.11108 0.11843 0.21937 0.21319 0.29297-0.0716 0.0931-0.123 0.21662-0.13673 0.33911-0.11302-0.018-0.24138-3e-3 -0.34991 0.0458-0.0417-0.11102-0.11843-0.21923-0.21321-0.29279 0.0716-0.0931 0.12301-0.21663 0.13673-0.33911 0.11315 0.018 0.24139 3e-3 0.34993-0.046z"/>
+ <path id="icon_ex3th" d="m381.33 108.72v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-1.1594 8.1783v-8.1783m-0.60451 7.6053h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.1783-1.1594h8.1783m-8.2659-0.77579h8.3536v8.3536h-8.3536v-8.3536zm-0.39157-0.39157h9.1367v9.1367h-9.1367v-9.1367z" fill="none" stroke="#0e107c" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="18.8" stroke-width=".13149"/>
+</g>
+<g transform="translate(120, 0)" fill="#000000" font-family="sans-serif" font-size="3.1167px" stroke-width=".26458" >
+ <text id="label_exth3" x="368.70569" y="98.110046" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">quạt hút phòng thổi</text>
 </g>
 <g fill="#000000" font-family="sans-serif" font-size="3.1167px" stroke-width=".26458">
- <text id="t_" x="368.70569" y="98.110046" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">hút gió  phòng in</text>
- <text x="394.35779" y="98.110046" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">cấp gió  phòng in</text>
- <text x="369.02643" y="116.51115" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">hút gió kho trục</text>
- <text x="394.35779" y="116.51114" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">hút gió kho trục</text>
+ <text id="label_fein" x="368.70569" y="98.110046" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">cấp gió  phòng in</text>
+ <text id="label_ext1" x="394.35779" y="98.110046" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">hút gió  phòng in</text>
+ <text id="label_ext3"x="369.02643" y="116.51115" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">hút gió kho trục</text>
+ <text id="label_ext4"x="394.35779" y="116.51114" fill="#000000" font-family="sans-serif"  stroke-width=".26458" xml:space="preserve">hút gió kho trục</text>
 </g>
 <g transform="translate(20, 200) scale(0.25)">
  <path d="M 20 80 A 40 40 0 1 1 80 80" stroke="#B5B5B5" stroke-width="8" fill="none"></path>
@@ -441,7 +482,10 @@
   stroke-dashoffset="188.4" ></path>
  </g> 
 
-  </svg>
+
+      </svg>
+      
+  </div> 
   <div id="tab3"style="height:90%; width: 100%;display: flex;flex-direction: row;">
     <div style="width: 50%; height: 100%; display: flex;flex-direction: column;">
       <div id="in1_chart" class="chart_class"></div>
@@ -470,6 +514,11 @@
 
       
   </div>
+  <div id="tab5"style="height:100%; width: 100%;display: flex;">
+      <div id="kwh_year" class="chart_class"></div>
+      <div id="kwh_month" class="chart_class"></div>
+  </div>
+  
   </div>
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
@@ -519,14 +568,14 @@
     });
     return svgContent+"</svg>";
     }
-        function creat_chart_kwh(width,height,padding,xvalue,yvalue,text)
+    function creat_chart_kwh(width,height,padding,xvalue,yvalue,text)
     {
     width=900;
     height=400;
     padding=20;
     const chartWidth = width - padding * 2;
     const chartHeight = height - (padding * 2.5);
-    const maxVal = 20000;
+    const maxVal = 10000;
     const barWidth = chartWidth / xvalue.length - (width/100);
     let svgContent = `<svg width="auto" height="auto" viewBox="0 0 ${width} ${height+10}"  version="1.1"  xmlns="http://www.w3.org/2000/svg">`;
     svgContent += `<line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" class="axis" />`;
@@ -548,6 +597,95 @@
     });
     return svgContent+"</svg>";
     }
+    function creat_chart(width,height,padding,xvalue,yvalue,text)
+    {
+    width=900;
+    height=400;
+    padding=20;
+    const chartWidth = width - padding * 2;
+    const chartHeight = height - (padding * 2.5);
+    const maxVal = 200000;
+    const barWidth = chartWidth / xvalue.length - (width/100);
+    let svgContent = `<svg width="auto" height="auto" viewBox="0 0 ${width} ${height+10}"  version="1.1"  xmlns="http://www.w3.org/2000/svg">`;
+    svgContent += `<line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" class="axis" />`;
+    svgContent += `<line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" class="axis" />`;
+    svgContent +=  "<text x=\""+(width/2)+ "\"y=\""+20+"\" font-size=\"20px\" font-weight=\"bold\" text-anchor=\"middle\">"+text+"</text>";
+    xvalue.forEach((item, index) => {
+        const barH = ((xvalue[index]) / maxVal) * (chartHeight/2);
+        const x = padding + index * (chartWidth / xvalue.length) + 5;
+        const y = height - padding - barH;
+
+       
+        svgContent += `<rect x="${x}" y="${y}" width="${barWidth}" height="${barH}" class="bar" />`;
+        
+        // Nhãn tên (Trục X)
+        svgContent += `<text x="${x + barWidth / 2}" y="${height - padding + 25}"  font-size="20px" text-anchor="middle">${yvalue[index]}</text>`;
+        
+        // Giá trị trên đầu cột
+        svgContent += `<text x="${x + barWidth / 2}" y="${y - 3}" font-size="20px" transform="rotate(-90, ${x + barWidth / 2}, ${y - 5})" text-anchor="start">${(Number)(xvalue[index]).toLocaleString('en-US')}</text>`;
+    });
+    return svgContent+"</svg>";
+    }
+    function creat_chart_kwh_month(width,height,padding,xvalue,yvalue,text)
+    {
+    width=900;
+    height=400;
+    padding=20;
+    const chartWidth = width - padding * 2;
+    const chartHeight = height - (padding * 2.5);
+    const maxVal = 500000;
+    const barWidth = chartWidth / xvalue.length - (width/100);
+    let svgContent = `<svg width="auto" height="auto" viewBox="0 0 ${width} ${height+10}"  version="1.1"  xmlns="http://www.w3.org/2000/svg">`;
+    svgContent += `<line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" class="axis" />`;
+    svgContent += `<line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" class="axis" />`;
+    svgContent +=  "<text x=\""+(width/2)+ "\"y=\""+20+"\" font-size=\"20px\" font-weight=\"bold\" text-anchor=\"middle\">"+text+"</text>";
+    xvalue.forEach((item, index) => {
+        const barH = ((xvalue[index]) / maxVal) * (chartHeight/2);
+        const x = padding + index * (chartWidth / xvalue.length) + 5;
+        const y = height - padding - barH;
+
+       
+        svgContent += `<rect x="${x}" y="${y}" width="${barWidth}" height="${barH}" class="bar" />`;
+        
+        // Nhãn tên (Trục X)
+        svgContent += `<text x="${x + barWidth / 2}" y="${height - padding + 25}"  font-size="20px" text-anchor="middle">${yvalue[index]}</text>`;
+        
+        // Giá trị trên đầu cột
+        svgContent += `<text x="${x + barWidth / 2}" y="${y - 3}" font-size="20px" transform="rotate(-90, ${x + barWidth / 2}, ${y - 5})" text-anchor="start">${(Number)(xvalue[index]).toLocaleString('en-US')}</text>`;
+    });
+    return svgContent+"</svg>";
+    }
+    function creat_chart_kwh_year(width,height,padding,xvalue,yvalue,text)
+    {
+    width=900;
+    height=400;
+    padding=20;
+    const chartWidth = width - padding * 2;
+    const chartHeight = height - (padding * 2.5);
+    const maxVal = 5000000;
+    const barWidth = chartWidth / xvalue.length - (width/100);
+    let svgContent = `<svg width="auto" height="auto" viewBox="0 0 ${width} ${height+10}"  version="1.1"  xmlns="http://www.w3.org/2000/svg">`;
+    svgContent += `<line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" class="axis" />`;
+    svgContent += `<line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" class="axis" />`;
+    svgContent +=  "<text x=\""+(width/2)+ "\"y=\""+20+"\" font-size=\"20px\" font-weight=\"bold\" text-anchor=\"middle\">"+text+"</text>";
+    xvalue.forEach((item, index) => {
+        const barH = ((xvalue[index]) / maxVal) * (chartHeight/2);
+        const x = padding + index * (chartWidth / xvalue.length) + 5;
+        const y = height - padding - barH;
+
+       
+        svgContent += `<rect x="${x}" y="${y}" width="${barWidth}" height="${barH}" class="bar" />`;
+        
+        // Nhãn tên (Trục X)
+        svgContent += `<text x="${x + barWidth / 2}" y="${height - padding + 25}"  font-size="20px" text-anchor="middle">${yvalue[index]}</text>`;
+        
+        // Giá trị trên đầu cột
+        svgContent += `<text x="${x + barWidth / 2}" y="${y - 3}" font-size="20px" transform="rotate(-90, ${x + barWidth / 2}, ${y - 5})" text-anchor="start">${(Number)(xvalue[index]).toLocaleString('en-US')}</text>`;
+    });
+    return svgContent+"</svg>";
+    }
+    
+    
     function icon_sa(name,tem,status,animation)
     {    
     return "<svg width=\"auto\" height=\"auto\" version=\"1.1\" viewBox=\"0 0 100 60\" xmlns=\"http://www.w3.org/2000/svg\">"
@@ -684,13 +822,16 @@
     document.getElementById('tab2').style.display='none';
     document.getElementById('tab3').style.display='none';
     document.getElementById('tab4').style.display='none';
+    document.getElementById('tab5').style.display='none';
     document.getElementById('tab1_bt').onclick = function () 
     {
-      document.getElementById('tab4_bt').style.backgroundColor= "rgb(8, 137, 223)";
+    document.getElementById('tab5_bt').style.backgroundColor= "rgb(8, 137, 223)";
+    document.getElementById('tab4_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab2_bt').style.backgroundColor= "rgb(8, 137, 223)";
-     document.getElementById('tab3_bt').style.backgroundColor= "rgb(8, 137, 223)";
+    document.getElementById('tab3_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab1_bt').style.backgroundColor="blue";
     cancelAnimationFrame(animationId);
+    document.getElementById('tab5').style.display='none';
     document.getElementById('tab4').style.display='none';
     document.getElementById("tab3").style.display='none';
     document.getElementById("tab2").style.display='none';
@@ -699,11 +840,13 @@
     }
     document.getElementById("tab2_bt").onclick = function () 
     {
+      document.getElementById('tab5_bt').style.backgroundColor= "rgb(8, 137, 223)";
       document.getElementById('tab4_bt').style.backgroundColor= "rgb(8, 137, 223)";
       document.getElementById('tab1_bt').style.backgroundColor= "rgb(8, 137, 223)";
      document.getElementById('tab3_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab2_bt').style.backgroundColor="blue";
     cancelAnimationFrame(animationId);
+    document.getElementById('tab5').style.display='none';
     document.getElementById('tab4').style.display='none';
     document.getElementById("tab3").style.display='none';
     document.getElementById("tab1").style.display='none';
@@ -712,11 +855,13 @@
     }
     document.getElementById("tab3_bt").onclick = function () 
     {
+      document.getElementById('tab5_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab4_bt').style.backgroundColor= "rgb(8, 137, 223)";  
     document.getElementById('tab2_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab1_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab3_bt').style.backgroundColor="blue";
     cancelAnimationFrame(animationId);
+    document.getElementById('tab5').style.display='none';
     document.getElementById('tab4').style.display='none';
     document.getElementById("tab1").style.display='none';
     document.getElementById("tab2").style.display='none';
@@ -725,18 +870,43 @@
     }
     document.getElementById("tab4_bt").onclick = function () 
     {
+    document.getElementById('tab5_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab2_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab1_bt').style.backgroundColor= "rgb(8, 137, 223)";
     document.getElementById('tab3_bt').style.backgroundColor="rgb(8, 137, 223)";
     document.getElementById('tab4_bt').style.backgroundColor="blue";
     cancelAnimationFrame(animationId);
+    document.getElementById('tab5').style.display='none';
     document.getElementById("tab1").style.display='none';
     document.getElementById("tab2").style.display='none';
     document.getElementById('tab3').style.display='none';
     document.getElementById("tab4").style.display='flex';
     load_tab4();
     }
-   
+    document.getElementById("tab5_bt").onclick = function () 
+    {
+    document.getElementById('tab4_bt').style.backgroundColor= "rgb(8, 137, 223)";
+    document.getElementById('tab2_bt').style.backgroundColor= "rgb(8, 137, 223)";
+    document.getElementById('tab1_bt').style.backgroundColor= "rgb(8, 137, 223)";
+    document.getElementById('tab3_bt').style.backgroundColor="rgb(8, 137, 223)";
+    document.getElementById('tab5_bt').style.backgroundColor="blue";
+    cancelAnimationFrame(animationId);
+    document.getElementById('tab4').style.display='none';
+    document.getElementById("tab1").style.display='none';
+    document.getElementById("tab2").style.display='none';
+    document.getElementById('tab3').style.display='none';
+    document.getElementById("tab5").style.display='flex';
+    load_tab5();
+    }
+
+    document.getElementById("rst_alarm").onclick = function ()
+            {
+              var obj = new Object();
+              obj.cm = "rst_alarm";
+              var jsonString = JSON.stringify(obj);
+              firebase.database().ref("tx/").set(obj);
+              
+            }
    
     function load_tab1() 
     {
@@ -940,10 +1110,11 @@
                   document.getElementById("c2").textContent = curre[2] + " (A)";
                   document.getElementById("f2").textContent = curre[3] + " (A)";
                   if (0 < curre[3]) {document.getElementById("fan_kn2").setAttribute('class', "rotate");}
+                  if (curre[3] == 0) {document.getElementById("fan_kn2").setAttribute('class', 'stop');}
                   document.getElementById("t2").textContent = obj[device[i]]["te"] + " ℃";
                   if (obj[device[i]]["s"] == "r") {document.getElementById("kn2").setAttribute('class', "status_on");}
                   if (obj[device[i]]["s"] == "s") {document.getElementById("kn2").setAttribute('class', "status_off");}
-                  if (obj[device[i]]["s"] == "di") {document.getElementById("kn1").setAttribute('class', "status_fault");}
+                  if (obj[device[i]]["s"] == "di") {document.getElementById("kn2").setAttribute('class', "status_fault");}
                 }
 
                 if (device[i] == "fcuin") {
@@ -963,7 +1134,7 @@
 
                 }
 
-                let exhuast_array = ["exin", "exin1", "exin2", "exin3", "fein", "ext1", "ext2", "ext3"];
+                let exhuast_array = ["exin", "exin1", "exin2", "exin3", "fein", "ext1", "ext2", "ext3","ex1th","ex2th","ex3th"];
                 for (let j = 0; j < exhuast_array.length; j++) {
                   if (device[i] == exhuast_array[j]) {
                     if (obj[device[i]]["s"] == "di") {document.getElementById("icon_" + exhuast_array[j]).setAttribute('class', "status_fault"); document.getElementById("rotate_" + exhuast_array[j]).setAttribute('class', "status_fault");}
@@ -998,26 +1169,36 @@
             if (device[i] == "ua")
                {
                  var current=Number(obj[device[i]]["s"])
-                 document.getElementById("ua").textContent = current.toString() + " (A)";
+                 document.getElementById("ua").textContent = current.toString() + " (V)";
                  document.getElementById("%ua").style.strokeDashoffset = 251.2-(200*(current/2000));
                }
                  if (device[i] == "ub")
                {
                  var current=Number(obj[device[i]]["s"])
-                 document.getElementById("ub").textContent = current.toString() + " (A)";
+                 document.getElementById("ub").textContent = current.toString() + " (V)";
                  document.getElementById("%ub").style.strokeDashoffset = 251.2-(200*(current/2000));
                }
                  if (device[i] == "uc")
                {
                   var current=Number(obj[device[i]]["s"])
-                 document.getElementById("uc").textContent = current.toString() + " (A)";
+                 document.getElementById("uc").textContent = current.toString() + " (V)";
                  document.getElementById("%uc").style.strokeDashoffset = 251.2-(200*(current/2000));
                }
 
               }
             }
-            animationId = requestAnimationFrame(load_tab2);
-     }
+      animationId = requestAnimationFrame(load_tab2);
+      document.getElementById("label_fein").addEventListener('click', function() {control_on_off( "fein","quạt cấp gió phong in");});
+      document.getElementById("label_ext1").addEventListener('click', function() {control_on_off( "ext1","quạt hút gió phong in");});
+      document.getElementById("label_fcuin").addEventListener('click', function() {control_on_off( "fcuin","máy lạnh phong in");});
+      document.getElementById("label_exth1").addEventListener('click', function() {control_on_off( "ex1th","quạt hút 1 phòng thổi");});
+      document.getElementById("label_exth2").addEventListener('click', function() {control_on_off( "ex2th","quạt hút 2 phòng thổi");});
+      document.getElementById("label_exth3").addEventListener('click', function() {control_on_off( "ex3th","quạt hút 3 phòng thổi");});
+      document.getElementById("label_exin1").addEventListener('click', function() {control_on_off( "exin1","quạt hút dung môi in 1");});
+      document.getElementById("label_exin2").addEventListener('click', function() {control_on_off( "exin2","quạt hút dung môi in 1");});
+      document.getElementById("label_exin3").addEventListener('click', function() {control_on_off( "exin3","quạt hút dung môi in 1");});
+
+    }
     function load_tab3() {
             var obj = new Object();
             
@@ -1125,6 +1306,8 @@
             var obj = new Object();
             // if((da.getMonth()+1)<10){obj.month = '0'+(da.getMonth()+1).toString();}
             // else{obj.month = (da.getMonth()+1).toString();}
+         
+
             obj.month = "09";
             obj.cm = "energy";
             obj.year = "2026";//da.getFullYear().toString();
@@ -1136,7 +1319,7 @@
             ref.on("value", function (snapshot) {
               var obj1 = JSON.parse(snapshot.val());
 
-              if ((Object.keys(obj1).toString()).includes("kwh")) {
+               if ((Object.keys(obj1).toString()).includes("kwh")) {
                 var x = [];
                 const y = [];
                 clock = Object.keys(obj1["kwh"]).sort();
@@ -1154,7 +1337,7 @@
                 document.getElementById("kwh_chart").innerHTML=creat_chart_kwh(1200,150,40,y,x,text);
 
               }
-                     if ((Object.keys(obj1).toString()).includes("kwh_in1")) {
+                if ((Object.keys(obj1).toString()).includes("kwh_in1")) {
                 var x = [];
                 const y = [];
                 clock = Object.keys(obj1["kwh_in1"]).sort();
@@ -1170,7 +1353,7 @@
                 document.getElementById("kwh_in1_chart").innerHTML=creat_chart_kwh(1200,150,40,y,x,text);
 
               }
-                   if ((Object.keys(obj1).toString()).includes("kn_1")) {
+                if ((Object.keys(obj1).toString()).includes("kn_1")) {
                 var x = [];
                 const y = [];
                 clock = Object.keys(obj1["kn_1"]).sort();
@@ -1202,7 +1385,7 @@
                 document.getElementById("kwh_kn2_chart").innerHTML=creat_chart_kwh(1200,150,40,y,x,text);
 
               }
-                 if ((Object.keys(obj1).toString()).includes("exin1")) {
+                if ((Object.keys(obj1).toString()).includes("exin1")) {
                 var x = [];
                 const y = [];
                 clock = Object.keys(obj1["exin1"]).sort();
@@ -1219,7 +1402,7 @@
 
               }
         
-                            if ((Object.keys(obj1).toString()).includes("exin2")) {
+                if ((Object.keys(obj1).toString()).includes("exin2")) {
                 var x = [];
                 const y = [];
                 clock = Object.keys(obj1["exin2"]).sort();
@@ -1235,7 +1418,7 @@
                 document.getElementById("kwh_exin2_chart").innerHTML=creat_chart_kwh(1200,150,40,y,x,text);
 
               }
-                               if ((Object.keys(obj1).toString()).includes("exin3")) {
+                if ((Object.keys(obj1).toString()).includes("exin3")) {
                 var x = [];
                 const y = [];
                 clock = Object.keys(obj1["exin3"]).sort();
@@ -1256,6 +1439,81 @@
             });
             firebase.database().ref("rx/").set(false);
           }
+    function load_tab5() {
+            var obj = new Object();
+            obj.month = "09";
+            obj.cm = "energy_total";
+            obj.year = "2026";//da.getFullYear().toString();
+            var jsonString = JSON.stringify(obj);
+            firebase.database().ref("tx/").set(obj);
+            var ref = firebase.database().ref("rx/");
+            var clock;
+            const barColors = [];
+            ref.on("value", function (snapshot) {
+            var obj1 = JSON.parse(snapshot.val());
+            if ((Object.keys(obj1).toString()).includes("kwh_year")) {
+                var x = [];
+                const y = [];
+                clock = Object.keys(obj1["kwh_year"]).sort();
+                text_chart = 0;
+                for (let i = 0; i < clock.length; i++) {
+                  x[i] = clock[i].trim();
+                  let text = obj1["kwh_year"][clock[i]];
+                  y[i]=text;
+                  text_chart = text_chart + Number(text);
+                
+                }
+
+                kwh_total= text_chart;
+                let text= " điện năng tiêu thụ điện theo từng năm"
+                document.getElementById("kwh_year").innerHTML=creat_chart_kwh_year(1200,150,40,y,x,text);
+
+              }
+              if ((Object.keys(obj1).toString()).includes("kwh_month")) {
+                var x = [];
+                const y = [];
+                clock = Object.keys(obj1["kwh_month"]).sort();
+                text_chart = 0;
+                for (let i = 0; i < clock.length; i++) {
+                  x[i] = clock[i].trim();
+                  let text = obj1["kwh_month"][clock[i]];
+                  y[i]=text;
+                  text_chart = text_chart + Number(text);
+                
+                }
+
+                kwh_total= text_chart;
+                let text= " điện năng tiêu thụ năm 2026"
+                document.getElementById("kwh_month").innerHTML=creat_chart_kwh_month(1200,150,40,y,x,text);
+
+              }
+              });
+            firebase.database().ref("rx/").set(false);
+
+
+  }   
+    function control_on_off(cm,name_control)
+      {
+        dialog_control_on_off.show(); 
+        document.getElementById("name_control").innerText=name_control;
+        document.getElementById("control").onclick=function()
+        {
+         var obj = new Object();
+         obj.cm=cm;
+         obj.string_cm=document.getElementById("string_cm").value;
+         var jsonString= JSON.stringify(obj);
+         firebase.database().ref("tx/").set(obj);
+        
+         }
+         document.getElementById("cancel_control_on_off").onclick=function()
+        {
+         dialog_control_on_off.close();
+         firebase.database().ref("rx/").set(false);
+       }
+     
+      }
+
+
 </script>
 </body>
 </html>
